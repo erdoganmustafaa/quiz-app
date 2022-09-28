@@ -1,4 +1,4 @@
-const correctAnswers = ["D","C","D","B","C"];
+const correctAnswers = ["D","C","D","B","Cz"];
 const form = document.querySelector(".quiz-form");
 const result = document.querySelector(".result");
 const remainingTime = document.querySelector(".remaining-time");
@@ -11,6 +11,7 @@ let submitBtn = document.querySelector(".next-btn");
 let questionCount = 1;
 submitBtn.classList.add("d-none");
 
+function startTimer(){
     let time = 60;
     let timeAnimation = setInterval(()=>{
     remainingTime.textContent = `${time}`;
@@ -20,10 +21,14 @@ submitBtn.classList.add("d-none");
     else{
           time--;  
     }
-    },1000)
+    },1000);
+    callBackTimeAnimation = timeAnimation;
+    return callBackTimeAnimation;
+}
+    
 
 function stopTimer(){
-    clearInterval(timeAnimation);
+    clearTimeout(callBackTimeAnimation);
 } 
 
 
@@ -33,6 +38,8 @@ function startQuiz(){
     document.querySelector(".start-btn").remove();
     submitBtn.classList.remove("d-none");
     questionOne.classList.remove("d-none");
+    startTimer();
+   
 }
 
 function showNextQuestion(){
