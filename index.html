@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./main.css" rel="stylesheet">
+    
+    
+</head>
+<body>
+    <div id="main-div">
+        <div class="intro py-3 text-center">
+         <div class="container">
+             <h2 class="text-danger display-3 my-4">Soru Cevap Uygulamasına Hoşgeldiniz.</h2>
+         </div>
+        </div>
+        <div class="result py-4 bg-light text-center d-none">
+            <div class="container lead">
+                <p>Soruların <span class="text-primary display-4 p-3">%0</span>'ını bildiniz.</p>
+            </div>
+        </div>
+        <div class="quiz py-5">
+         <div class="container">
+            <div class="text-center">
+            <span class="time">Kalan süre: <span class="remaining-time">60</span></span>
+            <p class="lead" id="ready">Quize Başlamaya Hazır Olduğunda Başlayabilirsin.</p>
+            <input type="button" class="start-btn btn btn-danger" onclick=startQuiz(); value="Başla"/>
+            </div>
+             <form class="quiz-form text-light fw-bold text-center text-black">
+                
+               <div class="quiz-question question-one d-none">
+                
+                 <p class="lead">JavaScript'deki yorum satırları, _______ tarafından yok sayılır.</p>
+                 
+                 <div class="form-check my-2">
+                     <input type="radio" name="s1" value="A">
+                     <label class="form-check-label">Bilgisayar</label>
+                 </div>
+            
+                 <div class="form-check my-2">
+                     <input type="radio" name="s1" value="B" >
+                     <label class="form-check-label">İşletim Sistemi</label>
+                 </div>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s1" value="C" >
+                     <label class="form-check-label">Derleyici</label>
+                 </div>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s1" value="D" >
+                     <label class="form-check-label">Tarayıcı</label>
+                 </div>
+               </div>             
+               <div class="quiz-question question-two d-none">
+                 <p class="lead">Bir ifade bloğu oluşturmak için birden fazla JS ifadesi _____ içine yazılır.</p>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s2" value="A">
+                     <label class="form-check-label">Köşeli parantezler "[ ]"</label>
+                 </div>
+            
+                 <div class="form-check my-2">
+                     <input type="radio" name="s2" value="B" >
+                     <label class="form-check-label">Yuvarlak parantezler "( )"</label>
+                 </div>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s2" value="C" >
+                     <label class="form-check-label">Süslü parantezler "{ }"</label>
+                 </div>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s2" value="D" >
+                     <label class="form-check-label">Hepsi</label>
+                 </div>
+               </div>
+               <div class="quiz-question question-three d-none">
+                 <p class="lead">_____ operatörü bir değişkene bir değeri atamak için kullanılır.</p>
+                 
+                 <div class="form-check my-2">
+                     <input type="radio" name="s3" value="A">
+                     <label class="form-check-label">+</label>
+                 </div>
+            
+                 <div class="form-check my-2">
+                     <input type="radio" name="s3" value="B" >
+                     <label class="form-check-label">*</label>
+                 </div>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s3" value="C" >
+                     <label class="form-check-label">**</label>
+                 </div>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s3" value="D" >
+                     <label class="form-check-label">=</label>
+                 </div>
+               </div>
+               <div class="quiz-question question-four d-none">
+                 <p class="lead">JavaScript ifadeleri ____ tarafından sonlandırılır.</p>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s4" value="A">
+                     <label class="form-check-label">"/"</label>
+                 </div>
+            
+                 <div class="form-check my-2">
+                     <input type="radio" name="s4" value="B" >
+                     <label class="form-check-label">";"</label>
+                 </div>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s4" value="C" >
+                     <label class="form-check-label">","</label>
+                 </div>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s4" value="D" >
+                     <label class="form-check-label">"!"</label>
+                 </div>
+               </div>
+               <div class="quiz-question question-five d-none">
+                 <p class="lead">"Id" attribute (özellik) değerine göre bir belge öğesi (document element) nasıl seçilir ?</p>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s5" value="A">
+                     <label class="form-check-label">getId()</label>
+                 </div>
+            
+                 <div class="form-check my-2">
+                     <input type="radio" name="s5" value="B" >
+                     <label class="form-check-label">get()</label>
+                 </div>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s5" value="C" >
+                     <label class="form-check-label">getElementsbyId()</label>
+                 </div>
+                 <div class="form-check my-2">
+                     <input type="radio" name="s5" value="D" >
+                     <label class="form-check-label">getElementbyId()</label>
+                 </div>
+               </div>
+              
+               
+               <input type="button" value="Diğer Soruya Geç" class="next-btn btn btn-danger" onclick=showNextQuestion();>
+             </form>
+         </div>
+        </div>
+     </div>
+     <script src="/main.js"></script>
+</body>
+</html>
